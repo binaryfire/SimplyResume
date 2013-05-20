@@ -1,32 +1,10 @@
 <!doctype html>
 <html>
 <head>
-    <title>Hello</title>
-    <script type="text/javascript" src="script/jquery.js"></script>
-    <script type="text/javascript">
-
-        function onLinkedInLoad() {
-            IN.Event.on(IN, "auth", onLinkedInAuth);
-        }
-
-        function onLinkedInAuth() {
-            IN.API.Profile("me").fields([["id","first-name","last-name","maiden-name","formatted-name","phonetic-first-name","phonetic-last-name","formatted-phonetic-name","headline","location:(name,country:(code))","industry","distance","relation-to-viewer:(distance)","current-share","num-connections","num-connections-capped","summary","specialties","positions:(id,title,summary,start-date,end-date,is-current,company:(id,name,type,size,industry,ticker))","picture-url","site-standard-profile-request","api-standard-profile-request:(headers,url)","public-profile-url","email-address","last-modified-timestamp","proposal-comments","associations","honors","interests","publications:(id,title,publisher:(name),authors:(id,name,person),date,url,summary)","patents:(id,title,summary,number,status:(id,name),office:(name),inventors:(id,name,person),date,url)","languages:(id,language:(name),proficiency:(level,name))","skills:(id,skill:(name))","certifications:(id,name,authority:(name),number,start-date,end-date)","educations:(id,school-name,field-of-study,start-date,end-date,degree,activities,notes)","courses:(id,name,number)","volunteer:(volunteer-experiences:(id,role),causes:(name),supported-organizations:(name))","three-current-positions","three-past-positions","num-recommenders","recommendations-received:(id,recommendation-type,recommendation-text,recommender)","mfeed-rss-url","following","job-bookmarks","suggestions","date-of-birth","member-url-resources:(url,name)","related-profile-views","phone-numbers","bound-account-types","im-accounts","main-address","twitter-accounts","primary-twitter-account","connections","group-memberships"]]).result(displayProfiles);
-        }
-
-        function displayProfiles(profiles) {
-            member = profiles.values[0];
-            $("#profiles").html(member.firstName);
-        }
-
-        $(document).ready(function () {
-            jQuery("<script/>", {
-                text:"api_key:xbk1olhzg7tw\nauthorize: true\nonLoad: onLinkedInLoad\n",
-                type:"text/javascript",
-                src:"http://platform.linkedin.com/in.js"
-            }).appendTo('head');
-        });
-
-    </script>
+    <title>Simply Resume</title>
+    <script type="text/javascript" src="script/lib/jquery.js"></script>
+    <script type="text/javascript" src="script/linkedin/linkedin.js"></script>
+    <script type="text/javascript" src="script/main.js"></script>
 </head>
 <body>
 <script type="IN/Login"></script>
